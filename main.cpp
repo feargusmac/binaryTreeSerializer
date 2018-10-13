@@ -1,26 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.cpp
  * Author: Feargus
  *
- * Created on October 12, 2018, 2:04 PM
+ * Serialize a binary tree into a string and 
+ * de-serialize a string back into a binary
+ * tree.
+ * 
  */
 
 #include <cstdlib>
 #include <iostream>
+#include "bTreeSerializer.h"
 
 using namespace std;
 
 /*
  * 
  */
-int main(int argc, char** argv) {
-    cout << "test" << endl;
+int main() {
+    string data = "174XX3XX56XX2XX";
+    
+    bTreeSerializer *serializer = new bTreeSerializer();
+  
+    bTreeLeaf *tree = new bTreeLeaf;
+    tree = serializer->deserialize(data);
+  
+    bTreeSerializer::printTree(tree);
+    cout << endl;
+    //cout << tree->left->left->right->data << endl;
+  
+    //string treeString = serialize(tree);
+  
+    //cout << endl << treeString << endl;
+  
+    delete tree;
+    return 0;
+  
     return 0;
 }
 

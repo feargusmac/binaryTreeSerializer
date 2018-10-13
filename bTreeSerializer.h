@@ -36,8 +36,8 @@ public:
     bTreeLeaf *makeLeaf(std::string, int);
     std::string serialize(bTreeLeaf*);
     bTreeLeaf *deserialize(std::string);
-    void printTree(bTreeLeaf*);
-    void printTree(std::string);
+    static void printTree(bTreeLeaf*);
+    static void printTree(std::string);
     
 private:
     void serialize(bTreeLeaf*, std::string&);

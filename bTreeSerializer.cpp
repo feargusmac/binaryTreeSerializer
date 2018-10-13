@@ -55,7 +55,8 @@ void bTreeSerializer::printTree(bTreeLeaf* leaf) {
 }
 
 void bTreeSerializer::printTree(std::string str) {
-    bTreeLeaf *tree = deserialize(str);
+    bTreeSerializer *temp;
+    bTreeLeaf *tree = temp->deserialize(str);
     printTree(tree);
 }
 
