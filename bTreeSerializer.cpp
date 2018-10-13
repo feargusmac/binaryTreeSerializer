@@ -1,5 +1,9 @@
 /*
  * Source file for bTreeSerializer.h
+ * 
+ * Serialize a binary tree into a string and 
+ * de-serialize a string back into a binary
+ * tree.
  */
 
 #include <iostream>
