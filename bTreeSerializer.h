@@ -33,7 +33,7 @@ public:
         
     }
     
-    bTreeLeaf *makeLeaf(std::string, int);
+    bTreeLeaf *makeLeaf(char);
     std::string serialize(bTreeLeaf*);
     bTreeLeaf *deserialize(std::string);
     static void printTree(bTreeLeaf*);
@@ -41,7 +41,7 @@ public:
     
 private:
     void serialize(bTreeLeaf*, std::string&);
-    void deserialize(bTreeLeaf*, std::string, int);
+    bTreeLeaf *rdeserialize(std::string&);
     
 };
 
