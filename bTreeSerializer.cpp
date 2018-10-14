@@ -32,9 +32,7 @@ std::string bTreeSerializer::serialize(bTreeLeaf* root) {
 
 bTreeLeaf *bTreeSerializer::deserialize(std::string treeString) {
     bTreeLeaf *root = new bTreeLeaf;
-    //std::cout << "in deserialize, made root" << std::endl;
     root = rdeserialize(treeString);
-    //std::cout << "in deserialize, ran rdeserialize" << std::endl;
     return root;
 }
 
@@ -66,8 +64,6 @@ void bTreeSerializer::serialize(bTreeLeaf *leaf, std::string &result) {
 }
 
 bTreeLeaf *bTreeSerializer::rdeserialize(std::string &str) {
-    //std::cout << "in rdeserialize" << std::endl;
-    //if (str.length() == 0) return NULL;
     if (!isdigit(str[0])) {
         str = str.substr(1);
         return NULL; 
@@ -79,12 +75,9 @@ bTreeLeaf *bTreeSerializer::rdeserialize(std::string &str) {
     else if (str.length() == 1)
         str = "";
     std::cout << str << std::endl;
-    //std::cout << "in rdeserialize, made new leaf" << std::endl;
  
     newLeaf->left = rdeserialize(str);
-    //std::cout << "made left leaf" << std::endl;
     newLeaf->right = rdeserialize(str);
-    //std::cout << "made right leaf" << std::endl;
     
     return newLeaf;
 }
