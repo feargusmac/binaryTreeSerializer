@@ -60,7 +60,7 @@ void bTreeSerializer::serialize(bTreeLeaf *leaf, std::string &result) {
         return;
     }
     
-    result += (char) (leaf->data -'0');
+    result += (char) (leaf->data +'0');
     serialize(leaf->left, result);
     serialize(leaf->right, result);
 }
